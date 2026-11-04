@@ -1,0 +1,72 @@
+:root{
+  --paper:#f6f1e8;
+  --card:#fffdf8;
+  --ink:#1f1b17;
+  --muted:#6d6358;
+  --line:#e3d8c7;
+  --accent:#8a3d2f;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:min(1060px,calc(100% - 40px));margin:0 auto;padding:56px 0 40px}
+
+header{max-width:44rem;margin-bottom:44px}
+.eyebrow{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 18px;
+}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;font-weight:500;margin:0 0 18px;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--muted);margin:0;max-width:38rem}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+.card{
+  display:flex;flex-direction:column;
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:22px 22px 20px;
+  text-decoration:none;color:inherit;
+  position:relative;overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:var(--accent);opacity:.9;
+}
+.card--qigong{--accent:#a4553c}
+.card--cats{--accent:#3f6b5e}
+.card--dogs{--accent:#7a5230}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(31,27,23,.45);border-color:#d6c8b3}
+
+.tag{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.card h2{font-size:27px;font-weight:500;margin:0 0 10px;line-height:1.15}
+.card p{font-size:15.5px;color:var(--muted);margin:0 0 22px;flex:1}
+.more{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px;color:var(--ink);
+  border-top:1px solid var(--line);padding-top:14px;
+}
+
+footer{
+  margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:13px;color:var(--muted);
+}
+footer p{margin:0}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding-top:36px}
+}
