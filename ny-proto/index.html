@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Новогодний корпоратив в ресторане — подберём зал за день | PLANDA</title>
+<meta name="description" content="Подберём ресторан под ваш новогодний корпоратив: 3 зала с фото, меню и ценами за один день. Подбор бесплатный, от 5 900 ₽ за гостя.">
+<style>
+  :root{
+    --bg:#0b0b0c; --panel:#141416; --line:#26262a; --ink:#f4f4f5; --muted:#a1a1aa;
+    --red:#e6301f; --red-dark:#c22a1b; --ok:#3fb950;
+    --r:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+  body{font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:96px}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+  .top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .top img{height:22px;width:auto}
+  .top a.call{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .top .icon{flex:0 0 36px;width:36px;height:36px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+  .hero{position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:14px;
+        background:#000 url('https://event.plan-da.ru/media/plandahero20261105v2?w=1280') center/cover no-repeat}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.72) 0%,rgba(11,11,12,.86) 60%,rgba(11,11,12,.95) 100%)}
+  .hero{min-height:240px;display:flex;align-items:flex-end}
+  .hero .in{position:relative;z-index:1;width:100%;padding:22px 18px 20px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff8d80;margin:0 0 6px}
+  h1{font-size:30px;line-height:1.06;letter-spacing:-.02em;margin:0 0 10px;text-transform:uppercase;font-weight:800}
+  .sub{color:#d4d4d8;margin:0;font-size:15px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+  .chip{font-size:12.5px;color:#e4e4e7;background:#1c1c20;border:1px solid var(--line);padding:7px 11px;border-radius:999px}
+  .chip b{color:#fff}
+  .quiz{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:14px 0}
+  .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+  .qnum{font-size:12.5px;color:var(--muted)}
+  .qprice{font-size:12.5px;color:#ff8d80;font-weight:600}
+  .bar{height:4px;background:#232327;border-radius:99px;overflow:hidden;margin:8px 0 14px}
+  .bar i{display:block;height:100%;width:25%;background:var(--red);border-radius:99px;transition:width .25s}
+  .qtitle{font-size:21px;line-height:1.2;margin:0 0 12px;font-weight:700}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:54px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#18181b;color:var(--ink);font-size:15.5px;text-align:left;cursor:pointer}
+  .opt:hover{border-color:#3a3a40}
+  .opt.on{border-color:var(--red);background:#24100d}
+  .opt small{color:var(--muted);font-size:12.5px;display:block;margin-top:2px}
+  .field{width:100%;min-height:54px;padding:14px;border-radius:12px;border:1px solid var(--line);background:#18181b;color:var(--ink);font-size:16px}
+  .field::placeholder{color:#71717a}
+  .next{width:100%;min-height:54px;margin-top:10px;border:0;border-radius:12px;background:var(--red);color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+  .next:disabled{opacity:.45}
+  .fine{font-size:12px;color:var(--muted);margin-top:10px}
+  .back{background:none;border:0;color:var(--muted);font-size:13px;padding:6px 0;cursor:pointer}
+  .ok{display:none;text-align:center;padding:8px 0}
+  .ok h3{margin:6px 0 6px;font-size:20px}
+  .ok p{margin:0;color:var(--muted);font-size:14px}
+  .venues{margin:22px 0 0}
+  h2{font-size:22px;line-height:1.15;margin:0 0 12px;text-transform:uppercase;font-weight:800;letter-spacing:-.01em}
+  .cards{display:grid;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .card img{height:190px;width:100%;object-fit:cover}
+  .card .b{padding:12px 14px}
+  .card .n{font-weight:700;font-size:17px;margin:0 0 2px}
+  .card .m{color:var(--muted);font-size:13px;margin:0 0 8px}
+  .card .p{font-size:14px;color:#e4e4e7}
+  .card .p b{color:#fff}
+  .card button{width:100%;min-height:46px;margin-top:10px;border:1px solid var(--line);background:#18181b;color:var(--ink);border-radius:10px;font-size:14.5px;font-weight:600;cursor:pointer}
+  .why{display:grid;gap:10px;margin:22px 0 0}
+  .why .row{display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .why .dot{width:22px;height:22px;border-radius:50%;background:#1e3a24;color:var(--ok);display:grid;place-items:center;font-size:13px;flex:0 0 22px;margin-top:1px}
+  .why p{margin:0;font-size:14.5px;color:#e4e4e7}
+  .faq{margin:22px 0 0}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:8px}
+  summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p{color:var(--muted);font-size:14px;margin:8px 0 0}
+  .foot{border-top:1px solid var(--line);margin-top:26px;padding:18px 0;color:var(--muted);font-size:12.5px}
+  .foot a{color:#d4d4d8}
+  .cta-bar{position:fixed;left:0;right:0;bottom:0;background:rgba(11,11,12,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));z-index:40;display:flex;gap:10px;align-items:center}
+  .cta-bar .l{flex:1;min-width:0}
+  .cta-bar .l b{display:block;font-size:14px}
+  .cta-bar .l span{font-size:12px;color:var(--muted)}
+  .cta-bar button{min-height:46px;padding:0 16px;border:0;border-radius:10px;background:var(--red);color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;white-space:nowrap}
+  .cookie{display:flex;gap:10px;align-items:center;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  .cookie.hide{display:none}
+  .cookie p{margin:0;font-size:12px;color:#c9c9cf;line-height:1.35}
+  .cookie button{border:0;background:var(--red);color:#fff;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+  @media(min-width:820px){
+    body{padding-bottom:24px}
+    .hero img{height:300px}
+    h1{font-size:44px}
+    .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
+    .cards{grid-template-columns:1fr 1fr}
+    .cta-bar{display:none}
+    .cookie{display:none}
+    .quiz{position:sticky;top:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <img src="https://event.plan-da.ru/brand/planda-white.svg" alt="PLANDA">
+    <a class="call" href="tel:+79512970486">
+      <span>+7 (951) 297-04-86</span>
+      <span class="icon" aria-hidden="true">✆</span>
+    </a>
+  </header>
+
+  <div class="grid2">
+    <section>
+      <div class="hero" role="img" aria-label="Новогодний корпоратив"><div class="in">
+          <p class="kicker">Новогодние корпоративы · Москва</p>
+          <h1>Новогодний корпоратив в ресторане — подберём зал за день</h1>
+          <p class="sub">3 зала с фото, меню и ценами. Подбор бесплатный — платит ресторан.</p>
+          <div class="chips">
+            <span class="chip"><b>25+</b> компаний</span>
+            <span class="chip">от <b>5 900 ₽</b>/гость</span>
+            <span class="chip">смета в договоре</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz">
+      <div class="qhead">
+        <span class="qnum" id="qnum">Вопрос 1 из 4</span>
+        <span class="qprice">Ответ — за 20 секунд</span>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+      <h3 class="qtitle" id="qtitle">Сколько будет гостей?</h3>
+
+      <div class="opts" id="opts"></div>
+
+      <div id="phoneStep" style="display:none">
+        <input class="field" id="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+        <button class="next" id="send">Получить 3 зала с ценами</button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</p>
+      </div>
+
+      <button class="back" id="back" style="display:none">← Назад</button>
+
+<div class="cookie" id="cookie">
+  <p>Мы используем cookie и Яндекс Метрику, чтобы понимать, что работает.</p>
+  <button id="cookieOk">Понятно</button>
+</div>
+      <div class="ok" id="ok">
+        <h3>Заявка принята</h3>
+        <p>Менеджер пришлёт подборку в течение дня. Если срочно — звоните: +7 (951) 297-04-86</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="venues">
+    <h2>Залы, которые выбирают для корпоративов</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="https://event.plan-da.ru/media/cmvjmrp93003a7dospjdw2pc5?w=640" alt="Kiki Event Dom" loading="lazy">
+        <div class="b"><p class="n">Kiki Event Dom</p><p class="m">Москва · до 150 гостей</p>
+          <p class="p">от <b>20 000 ₽</b> за гостя</p>
+          <button data-pick="Kiki Event Dom">Хочу похожий</button></div>
+      </article>
+      <article class="card">
+        <img src="https://event.plan-da.ru/media/cmvjmrqq8003j7dosam4uy8wi?w=640" alt="Madison Hall" loading="lazy">
+        <div class="b"><p class="n">Madison Hall</p><p class="m">Москва · до 150 гостей · 3 зала</p>
+          <p class="p">от <b>10 000 ₽</b> за гостя</p>
+          <button data-pick="Madison Hall">Хочу похожий</button></div>
+      </article>
+      <article class="card">
+        <img src="https://event.plan-da.ru/media/cmvjmrtn400407dos1p2djrsv?w=640" alt="Perfect Pitch" loading="lazy">
+        <div class="b"><p class="n">Perfect Pitch</p><p class="m">Москва · до 40 гостей</p>
+          <p class="p">от <b>6 000 ₽</b> за гостя</p>
+          <button data-pick="Perfect Pitch">Хочу похожий</button></div>
+      </article>
+      <article class="card">
+        <img src="https://event.plan-da.ru/media/cmvjmrwhb00497dosrfu6n78m?w=640" alt="Rodina Moscow Event" loading="lazy">
+        <div class="b"><p class="n">Rodina Moscow Event</p><p class="m">Москва · до 130 гостей · 4 зала</p>
+          <p class="p">от <b>10 000 ₽</b> за гостя</p>
+          <button data-pick="Rodina Moscow Event">Хочу похожий</button></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="row"><span class="dot">✓</span><p><b>Смета фиксируется в договоре.</b> Без доплат на месте.</p></div>
+    <div class="row"><span class="dot">✓</span><p><b>Один продюсер на связи</b> — от брифа до последнего гостя.</p></div>
+    <div class="row"><span class="dot">✓</span><p><b>Работаем с юрлицами:</b> договор, счёт, закрывающие документы.</p></div>
+  </section>
+
+  <section class="faq">
+    <h2>Частые вопросы</h2>
+    <details><summary>Сколько стоит подбор?</summary><p>Ничего. Наш гонорар платит ресторан — вы платите только за мероприятие по смете.</p></details>
+    <details><summary>Как быстро пришлёте подборку?</summary><p>В течение рабочего дня. Если нужно срочно — позвоните, найдём за пару часов.</p></details>
+    <details><summary>Можно посмотреть зал до брони?</summary><p>Да, организуем просмотр и дегустацию в удобное время.</p></details>
+    <details><summary>Работаете с юрлицами по безналу?</summary><p>Да, договор, счёт и закрывающие документы. Работаем с ИП и ООО.</p></details>
+  </section>
+
+  <footer class="foot">
+    PLANDA · организация корпоративов в Москве<br>
+    <a href="tel:+79512970486">+7 (951) 297-04-86</a> · <a href="mailto:event@plan-da.ru">event@plan-da.ru</a>
+  </footer>
+</div>
+
+<div class="cta-bar">
+  <div class="l"><b>Подбор зала за день</b><span>3 варианта с ценами · бесплатно</span></div>
+  <button onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'center'})">Подобрать</button>
+</div>
+
+
+<script>
+(function(){
+  var steps = [
+    {key:'guests', title:'Сколько будет гостей?', price:'', opts:[
+      {v:'до 30', s:'небольшая команда'},
+      {v:'30–60', s:'отдел или филиал'},
+      {v:'60–120', s:'вся компания'},
+      {v:'120+', s:'большой праздник'}]},
+    {key:'date', title:'Когда планируете?', opts:[
+      {v:'декабрь, первая половина'},
+      {v:'декабрь, вторая половина'},
+      {v:'новогодняя ночь'},
+      {v:'ещё не решили'}]},
+    {key:'budget', title:'Бюджет на гостя', opts:[
+      {v:'до 6 000 ₽'},
+      {v:'6 000–10 000 ₽'},
+      {v:'10 000–20 000 ₽'},
+      {v:'больше 20 000 ₽'}]},
+    {key:'contacts', title:'Куда прислать подборку?', phone:true}
+  ];
+  var idx = 0, answers = {};
+  var $ = function(id){ return document.getElementById(id); };
+  var bar = $('bar'), qnum = $('qnum'), qtitle = $('qtitle'), opts = $('opts'),
+      phoneStep = $('phoneStep'), back = $('back'), ok = $('ok'), quiz = $('quiz');
+
+  function render(scroll){
+    var s = steps[idx];
+    qnum.textContent = 'Вопрос ' + (idx+1) + ' из ' + steps.length;
+    bar.style.width = ((idx+1)/steps.length*100) + '%';
+    qtitle.textContent = s.title;
+    back.style.display = idx ? 'inline-block' : 'none';
+    phoneStep.style.display = s.phone ? 'block' : 'none';
+    opts.style.display = s.phone ? 'none' : 'grid';
+    opts.innerHTML = '';
+    if(!s.phone){
+      s.opts.forEach(function(o){
+        var b = document.createElement('button');
+        b.className = 'opt' + (answers[s.key] === o.v ? ' on' : '');
+        b.innerHTML = '<span>' + o.v + (o.s ? '<small>' + o.s + '</small>' : '') + '</span><span aria-hidden="true">→</span>';
+        b.onclick = function(){ answers[s.key] = o.v; next(); };
+        opts.appendChild(b);
+      });
+    } else {
+      $('phone').focus();
+    }
+    if(scroll !== false) quiz.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  function next(){ if(idx < steps.length-1){ idx++; render(); } }
+  function done(){
+    quiz.querySelectorAll('.qhead,.bar,.qtitle,#phoneStep,.back').forEach(function(e){ e.style.display='none'; });
+    ok.style.display = 'block';
+  }
+  back.onclick = function(){ if(idx>0){ idx--; render(); } };
+  $('send').onclick = function(){
+    var p = $('phone').value.replace(/\D/g,'');
+    if(p.length < 11){ $('phone').style.borderColor = '#e6301f'; $('phone').focus(); return; }
+    answers.phone = $('phone').value;
+    done();
+  };
+  $('phone').addEventListener('input', function(e){
+    var d = e.target.value.replace(/\D/g,'').slice(0,11);
+    var out = '+7';
+    if(d.length > 1) out += ' (' + d.slice(1,4);
+    if(d.length >= 5) out += ') ' + d.slice(4,7);
+    if(d.length >= 8) out += '-' + d.slice(7,9);
+    if(d.length >= 10) out += '-' + d.slice(9,11);
+    e.target.value = out;
+    e.target.style.borderColor = '#26262a';
+  });
+  document.querySelectorAll('[data-pick]').forEach(function(b){
+    b.addEventListener('click', function(){
+      answers.venue = b.getAttribute('data-pick');
+      document.getElementById('quiz').scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+  render(false);
+
+  var cookieShown = false;
+  function showCookie(){
+    if(cookieShown || localStorage.getItem('cookie_ok')) return;
+    cookieShown = true;
+    $('cookie').classList.add('show');
+    document.body.classList.add('cookie-open');
+  }
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 700) showCookie();
+  }, {passive:true});
+  setTimeout(showCookie, 12000);
+  $('cookieOk').onclick = function(){
+    localStorage.setItem('cookie_ok','1');
+    $('cookie').classList.remove('show');
+    document.body.classList.remove('cookie-open');
+  };
+})();
+</script>
+</body>
+</html>
